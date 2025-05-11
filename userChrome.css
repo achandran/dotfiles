@@ -1,0 +1,21 @@
+#urlbar {
+  font-family: "Aporetic Serif Mono", monospace !important;
+  font-size: 16px !important;
+}
+.urlbarView-row:first-of-type {
+  display: var(--mbarstyler-top-bar-display) !important;
+}
+
+.urlbarView-row[label]::before {
+  /* Suppress the text */
+  display: none !important;
+}
+.urlbarView-row[label] {
+  /* Remove the empty space */
+  margin-block-start: 0 !important;
+}
+
+.tab-text.tab-label{
+  font-family: "Aporetic Serif Mono", monospace !important;
+  font-size: 13px !important;
+}

@@ -1,0 +1,11 @@
+[user]
+	name = Anand Chandran
+	email = ac@stackgg.com
+[color]
+	ui = auto
+[core]
+  editor = /opt/homebrew/bin/nvim
+[credential]
+  helper = osxkeychain
+[pull]
+	rebase = false
