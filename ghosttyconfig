@@ -10,6 +10,12 @@ fullscreen = true
 # font
 font-family = Aporetic Serif Mono
 font-size = 17
+# font-thicken = true
 window-title-font-family = Aporetic Serif Mono
 
-theme = gruvbox_material_light_soft.conf
+# theme = light:kanso_pearl.conf,dark:kanso_mist.conf
+# theme = rose-pine-dawn
+# theme = light:gruvbox_material_light_soft.conf,dark:gruvbox_material_dark_soft.conf
+theme = catppuccin-macchiato
+
+keybind = shift+enter=text:\n

@@ -5,9 +5,9 @@ export CLICOLOR=1
 export FZF_DEFAULT_COMMAND='fd --type f --no-ignore --follow --exclude "{.git/*,node_modules/*}"'
 export FZF_CTRL_T_COMMAND='fd --type d --no-ignore --follow --exclude "{.git,node_modules}"'
 export LS_COLORS=exfxcxdxbxegedabagacad # set default LS_COLORS for use by fd
+export BAT_THEME="catppuccin_macchiato"
 export PATH="/opt/homebrew/bin:$PATH"
 export GOPATH="/Users/anand/.go"
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # Add extra, user-specified completions
 fpath+=~/.zfunc
@@ -43,6 +43,8 @@ setopt interactivecomments
 alias vi="/opt/homebrew/bin/nvim"
 alias py="/opt/homebrew/bin/python3"
 alias rg="rg --colors 'path:fg:blue' --colors 'match:fg:yellow'"
+alias gs="git status"
+alias claude="/Users/anand/.claude/local/claude"
 
 function json_diff() {
         vi -d <(jq -S . $1) <(jq -S . $2)
@@ -51,6 +53,26 @@ function json_diff() {
 function jqi() {
         `echo '' | fzf --disabled --print-query --preview-window 'down:90%' --preview 'jq --color-output {q} < $1'`
 }
+
+# Play two videos side by side in mpv
+function mpvlr() {
+        if [ $# -ne 2 ]; then
+          echo "Usage: mpvlr <left_video> <right_video>"
+          return 1
+        fi
+
+        if [ ! -f "$1" ]; then
+          echo "Error: Left video file '$1' not found"
+          return 1
+        fi
+
+        if [ ! -f "$2" ]; then
+          echo "Error: Right video file '$2' not found"
+          return 1
+        fi
+
+        mpv "$1" --external-file="$2" --lavfi-complex='[vid1] [vid2] hstack [vo]'
+  }
 
 fpath=(~/.zsh $fpath)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -61,9 +83,8 @@ fi
 export MANPAGER='nvim +Man!'
 
 # now load zsh-syntax-highlighting plugin (should be last)
+source ~/.zsh/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-
 export PATH="$PATH:/Users/anand/.modular/bin"
+export PATH="/Users/anand/.claude/local:$PATH"
