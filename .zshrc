@@ -5,7 +5,6 @@ export CLICOLOR=1
 export FZF_DEFAULT_COMMAND='fd --type f --no-ignore --follow --exclude "{.git/*,node_modules/*}"'
 export FZF_CTRL_T_COMMAND='fd --type d --no-ignore --follow --exclude "{.git,node_modules}"'
 export LS_COLORS=exfxcxdxbxegedabagacad # set default LS_COLORS for use by fd
-export BAT_THEME="catppuccin_macchiato"
 export PATH="/opt/homebrew/bin:$PATH"
 export GOPATH="/Users/anand/.go"
 
@@ -34,7 +33,8 @@ bashcompinit
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
 
-export PS1='%F{green}%n%F{reset_color}@%F{red}%m%F{reset_color}:%F{blue}%~ %F{magenta}${vcs_info_msg_0_}${NEWLINE}%F{reset_color}$ '
+export PS1='%F{black}%n%F{reset_color}@%F{13}%m%F{reset_color}:%F{blue}%~ %F{magenta}${vcs_info_msg_0_}${NEWLINE}%F{reset_color}$ '
+# export PS1='%F{green}%n%F{reset_color}@%F{red}%m%F{reset_color}:%F{blue}%~ %F{magenta}${vcs_info_msg_0_}${NEWLINE}%F{reset_color}$ '
 
 setopt inc_append_history
 setopt share_history
@@ -83,7 +83,6 @@ fi
 export MANPAGER='nvim +Man!'
 
 # now load zsh-syntax-highlighting plugin (should be last)
-source ~/.zsh/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH="$PATH:/Users/anand/.modular/bin"
