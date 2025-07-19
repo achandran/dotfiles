@@ -8,11 +8,10 @@ window-colorspace = display-p3
 fullscreen = true
 
 # font
-font-family = Aporetic Serif Mono
-font-size = 19
-font-thicken = true
-window-title-font-family = Aporetic Serif Mono
+font-family = Monaspace Krypton ExtraLight
+font-size = 17
+window-title-font-family = Monaspace Krypton ExtraLight
 
-theme = light:kanso_pearl.conf,dark:kanso_mist.conf
+theme = catppuccin_mocha.conf
 
 keybind = shift+enter=text:\n
