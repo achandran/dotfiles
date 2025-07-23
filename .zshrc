@@ -8,6 +8,7 @@ export LS_COLORS=exfxcxdxbxegedabagacad # set default LS_COLORS for use by fd
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/Users/anand/.claude/local:$PATH"
 export GOPATH="/Users/anand/.go"
+export BAT_THEME=catppuccin_frappe
 
 # Add extra, user-specified completions
 fpath+=~/.zfunc
