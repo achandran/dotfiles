@@ -1,5 +1,5 @@
 #urlbar {
-  font-family: "Monaspace Krypton ExtraLight", monospace !important;
+  font-family: "Aporetic Serif Mono", monospace !important;
   font-size: 17px !important;
 }
 .urlbarView-row:first-of-type {
@@ -16,6 +16,6 @@
 }
 
 .tab-text.tab-label{
-  font-family: "Monaspace Krypton ExtraLight", monospace !important;
+  font-family: "Aporetic Serif Mono", monospace !important;
   font-size: 13px !important;
 }

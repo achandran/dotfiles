@@ -8,10 +8,10 @@ window-colorspace = display-p3
 fullscreen = true
 
 # font
-font-family = Monaspace Krypton ExtraLight
+font-family = Aporetic Serif Mono
 font-size = 17
-window-title-font-family = Monaspace Krypton ExtraLight
+window-title-font-family = Aporetic Serif Mono
 
-theme = catppuccin_mocha.conf
+theme = catppuccin_frappe.conf
 
 keybind = shift+enter=text:\n

@@ -2,19 +2,12 @@ bindkey -v
 bindkey 'jk' vi-cmd-mode
 
 export CLICOLOR=1
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
---color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
---color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
---color=selected-bg:#45475A \
---color=border:#313244,label:#CDD6F4"
 export FZF_DEFAULT_COMMAND='fd --type f --no-ignore --follow --exclude "{.git/*,node_modules/*}"'
 export FZF_CTRL_T_COMMAND='fd --type d --no-ignore --follow --exclude "{.git,node_modules}"'
 export LS_COLORS=exfxcxdxbxegedabagacad # set default LS_COLORS for use by fd
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/Users/anand/.claude/local:$PATH"
 export GOPATH="/Users/anand/.go"
-export BAT_THEME="catppuccin_mocha"
 
 # Add extra, user-specified completions
 fpath+=~/.zfunc
@@ -82,7 +75,8 @@ function mpvlr() {
   }
 
 fpath=(~/.zsh $fpath)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
