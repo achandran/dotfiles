@@ -8,10 +8,10 @@ window-colorspace = display-p3
 fullscreen = true
 
 # font
-font-family = Aporetic Serif Mono
+font-family = Lotion
 font-size = 17
-window-title-font-family = Aporetic Serif Mono
+window-title-font-family = Lotion
 
-theme = catppuccin_frappe.conf
+theme = bluloco_dark.conf
 
 keybind = shift+enter=text:\n

@@ -1,5 +1,5 @@
 #urlbar {
-  font-family: "Aporetic Serif Mono", monospace !important;
+  font-family: "Lotion", monospace !important;
   font-size: 17px !important;
 }
 .urlbarView-row:first-of-type {
@@ -16,6 +16,6 @@
 }
 
 .tab-text.tab-label{
-  font-family: "Aporetic Serif Mono", monospace !important;
+  font-family: "Lotion", monospace !important;
   font-size: 13px !important;
 }
