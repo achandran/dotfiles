@@ -10,8 +10,11 @@ fullscreen = true
 # font
 font-family = Lotion
 font-size = 17
+font-style-bold = false
+font-style-italic = false
+font-style-bold-italic = false
 window-title-font-family = Lotion
 
-theme = bluloco_dark.conf
+theme = kanagawa_paper_ink.conf
 
 keybind = shift+enter=text:\n
