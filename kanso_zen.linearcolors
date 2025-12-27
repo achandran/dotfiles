@@ -1,0 +1,24 @@
+{
+  "name": "Kanso Zen",
+  "type": "dark",
+  "colors": {
+    "background": "#090E13",
+    "backgroundSecondary": "#1C1E25",
+    "backgroundTertiary": "#22262D",
+
+    "textPrimary": "#C5C9C7",
+    "textSecondary": "#A4A7A4",
+    "textTertiary": "#5C6066",
+
+    "border": "#22262D",
+    "divider": "#393B44",
+
+    "accent": "#2D4F67",
+    "accentHover": "#393B44",
+
+    "success": "#98BB6C",
+    "warning": "#DCA561",
+    "error": "#C34043",
+    "info": "#658594"
+  }
+}
