@@ -35,8 +35,16 @@ setopt PROMPT_SUBST
 
 export PS1='%F{green}%n%F{reset_color}@%F{yellow}%m%F{reset_color}:%F{blue}%~ %F{magenta}${vcs_info_msg_0_}${NEWLINE}%F{reset_color}$ '
 
-setopt inc_append_history
-setopt share_history
++# History configuration for sharing across Ghostty tabs
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt inc_append_history   # Append history incrementally (after each command)
+setopt share_history        # Share history between all zsh sessions
+setopt append_history       # Append to history file instead of overwriting
+setopt extended_history     # Include timestamps in history
+setopt hist_ignore_dups     # Don't record duplicate entries
+setopt hist_ignore_space    # Don't record commands starting with space
 setopt interactivecomments
 
 alias vi="/opt/homebrew/bin/nvim"
