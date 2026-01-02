@@ -33,7 +33,7 @@ bashcompinit
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
 
-export PS1='%F{green}%n%F{reset_color}@%F{11}%m%F{reset_color}:%F{blue}%~ %F{magenta}${vcs_info_msg_0_}${NEWLINE}%F{reset_color}$ '
+export PS1='%F{green}%n%F{reset_color}@%F{yellow}%m%F{reset_color}:%F{blue}%~ %F{magenta}${vcs_info_msg_0_}${NEWLINE}%F{reset_color}$ '
 
 setopt inc_append_history
 setopt share_history
