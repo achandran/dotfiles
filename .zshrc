@@ -1,5 +1,7 @@
 bindkey -v
 bindkey 'jk' vi-cmd-mode
+# Match Ghostty + Neovim selection
+zle_highlight=(region:bg=#a9b665,fg=#000000)
 
 export CLICOLOR=1
 export FZF_DEFAULT_COMMAND='fd --type f --no-ignore --follow --exclude "{.git/*,node_modules/*}"'
@@ -35,7 +37,7 @@ setopt PROMPT_SUBST
 
 export PS1='%F{green}%n%F{reset_color}@%F{yellow}%m%F{reset_color}:%F{blue}%~ %F{magenta}${vcs_info_msg_0_}${NEWLINE}%F{reset_color}$ '
 
-+# History configuration for sharing across Ghostty tabs
+# History configuration for sharing across Ghostty tabs
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -51,7 +53,6 @@ alias vi="/opt/homebrew/bin/nvim"
 alias py="/opt/homebrew/bin/python3"
 alias rg="rg --colors 'path:fg:blue' --colors 'match:fg:red'"
 alias gs="git status"
-alias claude="/Users/anand/.claude/local/claude"
 
 function json_diff() {
         vi -d <(jq -S . $1) <(jq -S . $2)

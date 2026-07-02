@@ -9,13 +9,12 @@ fullscreen = true
 
 # font
 font-family = Berkeley Mono
-font-size = 15
-font-thicken = true
+font-size = 16
 font-style-bold = false
 font-style-italic = false
 font-style-bold-italic = false
 window-title-font-family = Berkeley Mono
 
-theme = light:kanso_pearl.conf,dark:kanso_zen.conf
+theme = gruvbox_material_dark_soft.conf
 
 keybind = shift+enter=text:\n
