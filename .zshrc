@@ -1,14 +1,14 @@
 bindkey -v
 bindkey 'jk' vi-cmd-mode
 # Match Ghostty + Neovim selection
-zle_highlight=(region:bg=#a9b665,fg=#000000)
+zle_highlight=(region:bg=#4a3828,fg=#edd9b8)
 
 export CLICOLOR=1
 export FZF_DEFAULT_COMMAND='fd --type f --no-ignore --follow --exclude "{.git/*,node_modules/*}"'
 export FZF_CTRL_T_COMMAND='fd --type d --no-ignore --follow --exclude "{.git,node_modules}"'
 export LS_COLORS=exfxcxdxbxegedabagacad # set default LS_COLORS for use by fd
+export BAT_THEME=ansi
 export PATH="/opt/homebrew/bin:$PATH"
-export GOPATH="/Users/anand/.go"
 
 # Add extra, user-specified completions
 fpath+=~/.zfunc
