@@ -1,7 +1,7 @@
 bindkey -v
 bindkey 'jk' vi-cmd-mode
 # Match Ghostty + Neovim selection
-zle_highlight=(region:bg=#4a3828,fg=#edd9b8)
+zle_highlight=(region:bg=#4d699b,fg=#f2f1ef)
 
 export CLICOLOR=1
 export FZF_DEFAULT_COMMAND='fd --type f --no-ignore --follow --exclude "{.git/*,node_modules/*}"'
@@ -34,8 +34,7 @@ bashcompinit
 
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
-
-export PS1='%F{green}%n%F{reset_color}@%F{yellow}%m%F{reset_color}:%F{blue}%~ %F{magenta}${vcs_info_msg_0_}${NEWLINE}%F{reset_color}$ '
+export PS1='%F{black}%n%F{reset_color}@%F{yellow}%m%F{reset_color}:%F{blue}%~ %F{cyan}${vcs_info_msg_0_}${NEWLINE}%F{blue}$%F{reset_color} '
 
 # History configuration for sharing across Ghostty tabs
 HISTFILE=~/.zsh_history
