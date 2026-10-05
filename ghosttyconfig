@@ -15,6 +15,7 @@ font-style-italic = false
 font-style-bold-italic = false
 window-title-font-family = Berkeley Mono
 
-theme = jellybeans_warm.conf
+# theme = jellybeans_warm.conf
+theme = kanso_pearl.conf
 
 keybind = shift+enter=text:\n

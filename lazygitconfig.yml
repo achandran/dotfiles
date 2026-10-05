@@ -1,0 +1,8 @@
+# Kanso Pearl: accent pearlBlue4, selection pearlWhite2 (matches Ghostty/Neovim)
+gui:
+  theme:
+    activeBorderColor:
+      - "#4d699b"
+      - bold
+    selectedLineBgColor:
+      - "#dddddb"

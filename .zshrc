@@ -1,12 +1,15 @@
 bindkey -v
 bindkey 'jk' vi-cmd-mode
-# Match Ghostty + Neovim selection
-zle_highlight=(region:bg=#4a3828,fg=#edd9b8)
+# Match Ghostty/Neovim selection (pearlWhite2); only bg is set so text keeps its color
+zle_highlight=(region:bg=#dddddb paste:bg=#dddddb)
 
 export CLICOLOR=1
 export FZF_DEFAULT_COMMAND='fd --type f --no-ignore --follow --exclude "{.git/*,node_modules/*}"'
 export FZF_CTRL_T_COMMAND='fd --type d --no-ignore --follow --exclude "{.git,node_modules}"'
-export LS_COLORS=exfxcxdxbxegedabagacad # set default LS_COLORS for use by fd
+# Use the terminal's ANSI palette; current line matches the selection bg (pearlWhite2) and keeps text color
+export FZF_DEFAULT_OPTS='--color=base16,bg+:#dddddb,fg+:-1:regular,gutter:-1'
+# GNU equivalent of macOS's default LSCOLORS (exfxcxdxbxegedabagacad), for fd
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 export BAT_THEME=ansi
 export PATH="/opt/homebrew/bin:$PATH"
 
@@ -35,7 +38,7 @@ bashcompinit
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
 
-export PS1='%F{green}%n%F{reset_color}@%F{yellow}%m%F{reset_color}:%F{blue}%~ %F{magenta}${vcs_info_msg_0_}${NEWLINE}%F{reset_color}$ '
+PS1='%F{black}%n%f@%F{13}%m%f:%F{blue}%~ %F{cyan}${vcs_info_msg_0_}${NEWLINE}%F{blue}$%f '
 
 # History configuration for sharing across Ghostty tabs
 HISTFILE=~/.zsh_history
