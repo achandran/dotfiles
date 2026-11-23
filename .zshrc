@@ -1,13 +1,13 @@
 bindkey -v
 bindkey 'jk' vi-cmd-mode
-# Match Ghostty/Neovim selection (pearlWhite2); only bg is set so text keeps its color
-zle_highlight=(region:bg=#dddddb paste:bg=#dddddb)
+# Match Ghostty selection: Everforest Dark Medium (bg_visual); only bg is set so text keeps its color
+zle_highlight=(region:bg=#543A48,paste:bg=#543A48)
 
 export CLICOLOR=1
 export FZF_DEFAULT_COMMAND='fd --type f --no-ignore --follow --exclude "{.git/*,node_modules/*}"'
 export FZF_CTRL_T_COMMAND='fd --type d --no-ignore --follow --exclude "{.git,node_modules}"'
-# Use the terminal's ANSI palette; current line matches the selection bg (pearlWhite2) and keeps text color
-export FZF_DEFAULT_OPTS='--color=base16,bg+:#dddddb,fg+:-1:regular,gutter:-1'
+# Use the terminal's ANSI palette; current line uses Everforest bg_green with green accent highlights
+export FZF_DEFAULT_OPTS='--color=base16,bg+:#425047,fg+:-1:regular,hl:#A7C080,hl+:#A7C080:bold,pointer:#A7C080,prompt:#A7C080,marker:#E69875,border:#56635F,gutter:-1'
 # GNU equivalent of macOS's default LSCOLORS (exfxcxdxbxegedabagacad), for fd
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 export BAT_THEME=ansi
@@ -16,11 +16,6 @@ export PATH="/opt/homebrew/bin:$PATH"
 # Add extra, user-specified completions
 fpath+=~/.zfunc
 
-# Load version control information
-autoload -Uz vcs_info
-precmd() { vcs_info }
-# Format the vcs_info_msg_0_ variable
-zstyle ':vcs_info:git:*' formats '(%b)'
 # Add homebrew zsh completions
 if type brew &>/dev/null
 then
@@ -34,11 +29,11 @@ autoload -Uz compinit && compinit
 # enable bash completions
 autoload -U bashcompinit
 bashcompinit
+source "$HOME/code/haskell/tt/shell/tt-completion.zsh"
+zstyle ':completion:*' menu select
 
-NEWLINE=$'\n'
-setopt PROMPT_SUBST
-
-PS1='%F{black}%n%f@%F{13}%m%f:%F{blue}%~ %F{cyan}${vcs_info_msg_0_}${NEWLINE}%F{blue}$%f '
+# Prompt (vcs_info, PS1) lives in its own file so the Claude Code status line can share it
+source ~/.config/zsh/prompt.zsh
 
 # History configuration for sharing across Ghostty tabs
 HISTFILE=~/.zsh_history
@@ -56,34 +51,7 @@ alias vi="/opt/homebrew/bin/nvim"
 alias py="/opt/homebrew/bin/python3"
 alias rg="rg --colors 'path:fg:blue' --colors 'match:fg:red'"
 alias gs="git status"
-
-function json_diff() {
-        vi -d <(jq -S . $1) <(jq -S . $2)
-}
-
-function jqi() {
-        `echo '' | fzf --disabled --print-query --preview-window 'down:90%' --preview 'jq --color-output {q} < $1'`
-}
-
-# Play two videos side by side in mpv
-function mpvlr() {
-        if [ $# -ne 2 ]; then
-          echo "Usage: mpvlr <left_video> <right_video>"
-          return 1
-        fi
-
-        if [ ! -f "$1" ]; then
-          echo "Error: Left video file '$1' not found"
-          return 1
-        fi
-
-        if [ ! -f "$2" ]; then
-          echo "Error: Right video file '$2' not found"
-          return 1
-        fi
-
-        mpv "$1" --external-file="$2" --lavfi-complex='[vid1] [vid2] hstack [vo]'
-  }
+alias ai="agy"
 
 fpath=(~/.zsh $fpath)
 if type brew &>/dev/null; then
@@ -95,5 +63,6 @@ source <(fzf --zsh)
 
 export MANPAGER='nvim +Man!'
 
-export PATH="$PATH:/Users/anand/.modular/bin"
-export PATH="/Users/anand/.claude/local:$PATH"
+
+# Added by Antigravity CLI installer
+export PATH="/Users/anand/.local/bin:$PATH"

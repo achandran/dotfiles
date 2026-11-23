@@ -9,8 +9,8 @@
   "workflowKeywordTriggerEnabled": false,
   "statusLine": {
     "type": "command",
-    "command": "printf '%s@\\033[95m%s\\033[0m:\\033[34m%s\\033[0m \\033[36m%s\\033[0m\\n' \"$(whoami)\" \"$(hostname -s)\" \"$(pwd)\" \"$(git branch --show-current 2>/dev/null | sed 's/^/(/;s/$/)/' || echo '')\""
+    "command": "zsh -f -c 'source ~/.config/zsh/prompt.zsh; vcs_info; print -rP -- \"$PROMPT_INFO\"'"
   },
   "tui": "default",
-  "theme": "custom:kanso-pearl"
+  "theme": "custom:everforest-dark-medium"
 }

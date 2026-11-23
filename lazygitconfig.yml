@@ -1,8 +1,27 @@
-# Kanso Pearl: accent pearlBlue4, selection pearlWhite2 (matches Ghostty/Neovim)
+# Everforest Dark Medium: accent green (#A7C080), selection bg_green (#425047)
 gui:
   theme:
     activeBorderColor:
-      - "#4d699b"
+      - "#A7C080"
       - bold
+    inactiveBorderColor:
+      - "#56635F"
+    searchingActiveBorderColor:
+      - "#DBBC7F"
+      - bold
+    optionsTextColor:
+      - "#7FBBB3"
     selectedLineBgColor:
-      - "#dddddb"
+      - "#425047"
+    cherryPickedCommitFgColor:
+      - "#A7C080"
+    cherryPickedCommitBgColor:
+      - "#3D484D"
+    markedBaseCommitFgColor:
+      - "#7FBBB3"
+    markedBaseCommitBgColor:
+      - "#4D4C43"
+    unstagedChangesColor:
+      - "#E67E80"
+    defaultFgColor:
+      - "#D3C6AA"

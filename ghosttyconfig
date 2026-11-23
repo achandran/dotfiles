@@ -1,21 +1,14 @@
 # ghostty config
 # ~/.config/ghostty/config
 
-# use p3 colorspace over srgb
-window-colorspace = display-p3
-
-# start fullscreen
 fullscreen = true
 
-# font
-font-family = Berkeley Mono
-font-size = 15
-font-style-bold = false
-font-style-italic = false
-font-style-bold-italic = false
-window-title-font-family = Berkeley Mono
+font-size = 16
+font-style-bold = Bold
+font-style-italic = Italic
+font-style-bold-italic = Bold Italic
 
-# theme = jellybeans_warm.conf
-theme = kanso_pearl.conf
 
 keybind = shift+enter=text:\n
+
+theme = everforest_dark_medium.conf
